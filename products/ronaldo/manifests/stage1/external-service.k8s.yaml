@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/part-of: test-ronaldo
+  name: external
+  namespace: ronaldo-stage1
+spec:
+  ports:
+    - name: Hello6
+      port: 207
+      protocol: TCP
+      targetPort: 207
+  selector:
+    k8s.cpaas.nutanix.com/app: test-ronaldo
+    k8s.cpaas.nutanix.com/deployment-name: test-ronaldo
+    k8s.cpaas.nutanix.com/product: ronaldo
+    k8s.cpaas.nutanix.com/programming-language: golang
+    k8s.cpaas.nutanix.com/team: team1
+    k8s.cpaas.nutanix.com/workload-resource-type: general
+  type: ClusterIP
