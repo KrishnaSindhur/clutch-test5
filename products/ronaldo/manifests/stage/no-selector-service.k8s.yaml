@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: no-selector
+  namespace: ronaldo-stage
+spec:
+  ports:
+    - name: Hello5
+      port: 205
+      protocol: TCP
+      targetPort: 205
+  type: ClusterIP
