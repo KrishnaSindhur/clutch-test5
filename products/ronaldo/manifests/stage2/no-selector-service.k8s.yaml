@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: no-selector
+  namespace: ronaldo-stage2
+spec:
+  ports:
+    - name: Hello4
+      port: 204
+      protocol: TCP
+      targetPort: 204
+  type: ClusterIP
